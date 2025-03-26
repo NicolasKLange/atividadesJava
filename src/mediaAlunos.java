@@ -21,7 +21,7 @@ public class mediaAlunos {
             double soma = 0; 
 
             for (int j = 0; j < qtdNotas; j++) {
-                System.out.print("Informe a " + (j + 1) +"° nota de " + nomes[i] + ": ");
+                System.out.print("Informe a " + (j + 1) +"° nota de " + nomes[i] + ":  ");
                 notas[i][j] = scanner.nextDouble();
                 soma += notas[i][j];
             }
