@@ -1,21 +1,39 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class listaDeCompras {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
-        char sair = 'n';
-        int contador = 1;
+        //Lista dos produtos
+        ArrayList<String> produtos = new ArrayList<>();
 
-        while (sair == 'n') {
-            System.out.print("Informe o "+ contador +"° produto: ");
-            String[] produtos = new String[contador];
+        //Laço para o  usuarioA poder adicionar todos os produtos que queira
+        while (true) {
+            //Entrada de dados, produto
+            System.out.print("Informe o "+ (produtos.size() + 1) +"° produto: ");
+            produtos.add(scanner.nextLine());
             
-            System.out.println("Deseja sair?");
-            char saida = Character.toUpperCase(scanner.next().charAt(0));
-            contador ++;
+            // pedindo ao usuario se deseja sair do programa
+            System.out.print("Deseja sair? (s/n): ");
+            char sair = scanner.next().toLowerCase().charAt(0);
+            // Pular linha
+            scanner.nextLine();
+            
+            // Verificando se o usuario deseja sair do programa
+            if (sair == 's') {
+                break; 
+            }
         }
-        
-        
+
+        scanner.nextLine();
+        // Saida  de dados, lista de compras, aparece apos usuario sair do programa
+        System.out.println("*** Lista de Compras ***");
+
+        for(String produto : produtos) {
+            System.out.println("- " + produto);
+        }
+
+
+        scanner.close();
     }
 }
